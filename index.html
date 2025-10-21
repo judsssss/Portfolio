@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+  </head>
+  <body data-theme="dark">
+    <div class="container">
+      <!-- Header Navigation -->
+      <div class="header-nav">
+        <div class="logo-section">
+          <div class="logo-button">
+            <img
+              class="logo-dark"
+              src="img/logo.png"
+              alt=""
+              width="50px"
+              height="50px"
+            />
+            <img
+              class="logo-light"
+              src="img/logo-wbg.png"
+              alt=""
+              width="50px"
+              height="50px"
+            />
+          </div>
+          <div class="header-logo">
+            <div class="header-name">JUDSLAB.</div>
+          </div>
+        </div>
+
+        <!-- Popup Navigation Bar -->
+        <nav class="popup-nav" id="popupNav">
+          <div class="popup-nav-container">
+            <a href="#banner" class="popup-nav-item" data-tooltip="Home">
+              <i class="fa-solid fa-house"></i>
+            </a>
+            <a href="#about" class="popup-nav-item" data-tooltip="About">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="#skills" class="popup-nav-item" data-tooltip="Skills">
+              <i class="fa-solid fa-code"></i>
+            </a>
+            <a href="#projects" class="popup-nav-item" data-tooltip="Projects">
+              <i class="fa-solid fa-folder-open"></i>
+            </a>
+            <a href="#contact" class="popup-nav-item" data-tooltip="Contact">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Theme Toggle Button -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle-btn"
+          aria-label="Toggle theme"
+        >
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+
+      <!-- Profile Banner -->
+      <div class="profile-banner" id="banner">
+        <div class="galaxy-background"></div>
+        <div class="stars-layer"></div>
+        <canvas id="ripple-canvas"></canvas>
+        <div class="banner-overlay"></div>
+        <h1 class="banner-title">
+          <span class="word">Software</span>
+          <span class="word">Engineer</span>
+        </h1>
+      </div>
+
+      <!-- Profile Info -->
+      <div class="profile-info" id="home">
+        <div class="profile-actions">
+          <div class="profile-pic">
+            <img
+              class="main-prof-pic"
+              src="img/cat1.jpg"
+              alt="Profile picture"
+            />
+            <img class="hover-prof-pic" src="img/cat2.jpg" alt="" />
+            <img class="clicked-prof-pic" src="img/cat3.jpg" alt="" />
+          </div>
+          <div class="action-buttons">
+            <a href="https://github.com/judsssss" target="_blank" rel="noopener noreferrer">
+            <button class="btn icon-btn-github">
+              <img
+                class="github-dark"
+                src="img/github-mark-white.svg"
+                alt="GitHub (dark)"
+                width="18"
+                height="18"
+              />
+
+              <img
+                class="github-light"
+                src="img/github-mark-dark.svg"
+                alt="GitHub (light)"
+                width="18"
+                height="18"
+              /></a>
+            </button>
+            <a href="https://www.linkedin.com/in/judito-pepito-05732023b/" target="_blank" rel="noopener noreferrer"> 
+            <button class="btn icon-btn-lnknd">
+              <img src="img/lnknd.svg" alt="" height="18px" width="18px" />
+            </button>
+            </a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jude.apepito.e@email.com&su=OJT%20Application%20Inquiry&body=Hello%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20inquire%20about%20OJT%20opportunities.%0A%0AThank%20you!" 
+            target="_blank">
+            <button class="btn icon-btn-email">
+              <svg
+                viewBox="0 0 24 24"
+                width="18"
+                height="18"
+                fill="currentColor"
+              >
+                <path
+                  d="M1.998 5.5c0-1.381 1.119-2.5 2.5-2.5h15c1.381 0 2.5 1.119 2.5 2.5v13c0 1.381-1.119 2.5-2.5 2.5h-15c-1.381 0-2.5-1.119-2.5-2.5v-13zm2.5-.5c-.276 0-.5.224-.5.5v2.764l8 3.638 8-3.636V5.5c0-.276-.224-.5-.5-.5h-15zm15.5 5.463l-8 3.636-8-3.638V18.5c0 .276.224.5.5.5h15c.276 0 .5-.224.5-.5v-8.037z"
+                />
+              </svg>
+            </button> </a>
+            <a href="img/Judito_N_Pepito_Jr_CV.pdf" onclick="openAndDownload(event)" >
+            <button class="btn btn-primary">Download CV</button> </a>
+          </div>
+        </div>
+
+        <div class="profile-details">
+          <div class="profile-name">
+            <span class="name">Judito N. Pepito Jr</span>
+            <svg class="lock-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.5 7H17v-.25c0-2.76-2.24-5-5-5s-5 2.24-5 5V7h-.5C5.12 7 4 8.12 4 9.5v9C4 19.88 5.12 21 6.5 21h11c1.38 0 2.5-1.12 2.5-2.5v-9C20 8.12 18.88 7 17.5 7zM13 14.73V17h-2v-2.27c-.59-.35-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.41 1.38-1 1.73zM15 7H9v-.25c0-1.66 1.34-3 3-3s3 1.34 3 3V7z"
+              />
+            </svg>
+          </div>
+          <div class="username">@judsssss</div>
+
+          <div class="bio">
+            <em>Software Engineer | AI/ML Engineer</em>
+          </div>
+
+          <div class="profile-meta">
+            <div class="meta-item">
+              <span class="description email"
+                ><i class="fa-solid fa-envelope"></i
+                >jude.apepito.e@email.com</span
+              >
+              <span class="description phone"
+                ><i class="fa-solid fa-phone"></i>09661668608</span
+              >
+              <span class="description phone"
+                ><i class="fa-solid fa-location-dot"></i>Santo Niño 2, Lamac,
+                Consolacion, Cebu</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About content -->
+      <div class="about"></div>
+      <div class="about-container" id="about">
+        <div class="about-des">
+          <h2>About Me</h2>
+          <p>
+            👋 Fresh Computer Engineering graduate passionate about building
+            modern web applications and exploring AI/ML technologies. I craft
+            clean, responsive interfaces and love turning ideas into functional
+            solutions.
+          </p>
+          <p>
+            💻 Experienced in full-stack development with React, Node.js, and
+            Python. Currently diving deeper into machine learning and
+            data-driven applications. Always learning, always building.
+          </p>
+          <p>
+            🚀 <strong>Goal:</strong> Create impactful software that solves
+            real-world problems.
+          </p>
+        </div>
+        <!-- Education & Experience Side by Side -->
+        <!-- Education Section -->
+        <section class="edu-section">
+          <div class="edu-column">
+            <h3>Education</h3>
+            <div class="edu-item">
+              <div class="edu-year">2022 - 2026</div>
+              <h4>Bachelor of Science in Computer Engineering</h4>
+              <p class="institution">
+                Cebu Technological University - Danao Campus
+              </p>
+              <p class="edu-desc">
+                Specialized in Software Engineering, Hardware, Electronics/Electrical Engineering, Web Development, and
+                AI/ML technologies.
+              </p>
+            </div>
+            <div class="edu-item">
+              <div class="edu-year">2015 - 2021</div>
+              <h4>Senior High School - ABM</h4>
+              <p class="institution">Consolacion National High School DC</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="exp-section">
+          <div class="exp-column">
+            <h3>Relevant Experience</h3>
+            <div class="exp-item">
+              <div class="exp-year">2024 - 2025</div>
+              <h4>Technical Committee Member – ICpEP.SE CTU-Danao Chapter</h4>
+              <p class="exp-company">Organization Role</p>
+              <ul class="exp-duties">
+                <li>Assisted in organizing technical workshops and seminars on programming and electronics</li>
+                <li>Provided technical support for events, documentation, and setup of departmental equipment</li>
+                <li>Collaborated with fellow members to maintain and troubleshoot hardware used in school activities</li>
+              </ul>
+            </div>
+            <div class="exp-item">
+              <div class="exp-year">2025</div>
+              <h4>Budgeet – Expense Tracker Website</h4>
+              <p class="exp-company">HTML, CSS, JavaScript | Personal Project</p>
+              <ul class="exp-duties">
+                <li>Built a responsive budget tracking site for managing income and expenses</li>
+                <li>Designed user-friendly interface and implemented CRUD functionality</li>
+              </ul>
+            </div>
+            <div class="exp-item">
+              <div class="exp-year">2024</div>
+              <h4>Gas Sensor Alarm System</h4>
+              <p class="exp-company">Arduino Uno, Blynk, C++ | Microprocessor Project</p>
+              <ul class="exp-duties">
+                <li>Developed an IoT-based gas leakage detection and alarm system using Arduino Uno and Blynk</li>
+                <li>Programmed sensor-triggered alarms and mobile notifications for real-time safety alerts</li>
+                <li>Applied microcontroller and IoT concepts to simulate industrial safety systems</li>
+              </ul>
+            </div>
+            <div class="exp-item">
+              <div class="exp-year">2024</div>
+              <h4>CTU Danao Map Navigation Directory</h4>
+              <p class="exp-company">JavaScript | Software Development Project (Group)</p>
+              <ul class="exp-duties">
+                <li>Contributed to a campus navigation web app for CTU-Danao</li>
+                <li>Helped develop and integrate the API managing room and building data</li>
+                <li>Collaborated with frontend developers to ensure accurate data flow</li>
+              </ul>
+            </div>
+            <div class="exp-item">
+              <div class="exp-year">2022</div>
+              <h4>FoodHub Ordering Kiosk System</h4>
+              <p class="exp-company">C++ | Object-Oriented Programming Project (Group)</p>
+              <ul class="exp-duties">
+                <li>Designed a self-ordering kiosk system inspired by Jollibee's digital interface</li>
+                <li>Implemented menu selection, order summary, and checkout features</li>
+                <li>Applied core OOP concepts such as inheritance and encapsulation</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Technical Skills with Icons -->
+        <section class="skills-section" id="skills">
+          <h3>Technical Skills</h3>
+          <div class="skills-grid">
+            <div
+              class="skill-icon"
+              data-skill="HTML"
+              data-desc="Markup language for web structure"
+            >
+              <i class="fa-brands fa-html5"></i>
+              <span>HTML</span>
+              <div class="skill-tooltip">Markup language for web structure</div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="CSS"
+              data-desc="Styling and layout for web pages"
+            >
+              <i class="fa-brands fa-css3-alt"></i>
+              <span>CSS</span>
+              <div class="skill-tooltip">Styling and layout for web pages</div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="JavaScript"
+              data-desc="Dynamic programming for web interactivity"
+            >
+              <i class="fa-brands fa-js"></i>
+              <span>JavaScript</span>
+              <div class="skill-tooltip">
+                Dynamic programming for web interactivity
+              </div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="React"
+              data-desc="Modern UI library for building interfaces"
+            >
+              <i class="fa-brands fa-react"></i>
+              <span>React</span>
+              <div class="skill-tooltip">
+                Modern UI library for building interfaces
+              </div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="Node.js"
+              data-desc="JavaScript runtime for server-side development"
+            >
+              <i class="fa-brands fa-node"></i>
+              <span>Node.js</span>
+              <div class="skill-tooltip">
+                JavaScript runtime for server-side development
+              </div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="Python"
+              data-desc="Versatile language for web and AI/ML"
+            >
+              <i class="fa-brands fa-python"></i>
+              <span>Python</span>
+              <div class="skill-tooltip">
+                Versatile language for web and AI/ML
+              </div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="Git"
+              data-desc="Version control for tracking code changes"
+            >
+              <i class="fa-brands fa-git-alt"></i>
+              <span>Git</span>
+              <div class="skill-tooltip">
+                Version control for tracking code changes
+              </div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="GitHub"
+              data-desc="Platform for code collaboration and hosting"
+            >
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+              <div class="skill-tooltip">
+                Platform for code collaboration and hosting
+              </div>
+            </div>
+            <div
+              class="skill-icon"
+              data-skill="TensorFlow"
+              data-desc="Machine learning framework for AI models"
+            >
+              <i class="fa-solid fa-brain"></i>
+              <span>TensorFlow</span>
+              <div class="skill-tooltip">
+                Machine learning framework for AI models
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="projects-section" id="projects">
+          <h3>Featured Projects</h3>
+          <div class="projects-list">
+            <div class="project-item">
+              <div class="project-header">
+                <h4>🧯 Gas Sensor Alarm System</h4>
+                <div class="project-links">
+                  <a href="#" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="#" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                An IoT-based gas detection system that monitors air quality and alerts users via Blynk when gas leakage is detected.
+                Integrated sensors with Arduino Uno to trigger alarms and real-time mobile notifications, simulating industrial safety systems.
+              </p>
+              <div class="project-tags">
+                <span>Arduino Uno</span>
+                <span>Blynk</span>
+                <span>C++</span>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <h4>💰 Budgeet – Expense Tracker Website</h4>
+                <div class="project-links">
+                  <a href="#" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="#" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                A responsive budget management web app that helps users track income, expenses, and savings.
+                Features CRUD operations, clean UI, and user authentication for personalized finance tracking.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <h4>🎨 Etch-a-Sketch Interactive Game</h4>
+                <div class="project-links">
+                  <a href="https://judsssss.github.io/TOP/EAS" target="_blank" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="https://github.com/judsssss/TOP/tree/main/EAS" target="_blank" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                A fun, web-based drawing game inspired by the classic Etch-a-Sketch toy.
+                Allows users to draw on a grid with color selection, reset options, and responsive interface design.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <h4>📘 Differential Equation (DE) Solver App</h4>
+                <div class="project-links">
+                  <a href="#" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="#" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                A GUI-based calculator that solves differential equations and displays graphical representations of results.
+                Built using Python libraries and Tkinter for an interactive learning tool that supports students in understanding DE concepts.
+              </p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>Tkinter</span>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <h4>🍔 FoodHub Ordering Kiosk System</h4>
+                <div class="project-links">
+                  <a href="#" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="#" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                A self-ordering kiosk system inspired by Jollibee's digital ordering interface.
+                Implements menu selection, order summary, and payment simulation while applying core OOP principles like inheritance and encapsulation.
+              </p>
+              <div class="project-tags">
+                <span>C++</span>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <h4>🗺️ CTU Danao Map Navigation Directory</h4>
+                <div class="project-links">
+                  <a href="#" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="#" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                A web-based campus navigation app for CTU-Danao that helps users locate buildings, rooms, and facilities.
+                Developed and integrated API endpoints to handle data and images, ensuring smooth information display across the app.
+              </p>
+              <div class="project-tags">
+                <span>JavaScript</span>
+                <span>API</span>
+              </div>
+            </div>
+
+            <div class="project-item">
+              <div class="project-header">
+                <h4>🎧 MP3 Player</h4>
+                <div class="project-links">
+                  <a href="#" title="View Live"
+                    ><i class="fa-solid fa-arrow-up-right-from-square"></i
+                  ></a>
+                  <a href="https://github.com/judsssss/loveThyMusic/tree/main/MP3files" title="GitHub"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </div>
+              </div>
+              <p>
+                A simple MP3 player application that simulates essential audio playback functions such as play, pause, and volume control.
+                Focuses on logic implementation, UI control, and responsive design for smooth interaction.
+              </p>
+              <div class="project-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer id="contact">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Let's Connect</h4>
+            <p>
+              I'm always open to discussing new projects, creative ideas, or
+              opportunities to be part of your vision.
+            </p>
+          </div>
+          <div class="footer-links">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=jude.apepito.e@email.com&su=OJT%20Application%20Inquiry&body=Hello%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20inquire%20about%20OJT%20opportunities.%0A%0AThank%20you!" 
+            target="_blank" class="footer-link">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Email Me</span>
+            </a>
+            <a href="https://github.com/judsssss" target="_blank" class="footer-link">
+              <i class="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/judito-pepito-05732023b/" target="_blank" class="footer-link">
+              <i class="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2024 Judito N. Pepito Jr. All rights reserved.</p>
+            <p class="footer-tagline">
+              Built with <i class="fa-solid fa-heart"></i> and lots of coffee
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
