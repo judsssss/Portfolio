@@ -196,22 +196,23 @@ function openAndDownload(event) {
   }, 500); // Small delay to ensure new tab opens first
 }
 
-// POPUP NAVIGATION BAR - Show on scroll
+// POPUP NAVIGATION BAR + HEADER HIDE/SHOW ON SCROLL
 const popupNav = document.getElementById('popupNav');
-let lastScrollTop = 0;
-const scrollThreshold = 300; // Show after scrolling 300px
+const headerNav = document.querySelector('.header-nav');
+const scrollThreshold = 50; // Show popup after scrolling 50px
 
 window.addEventListener('scroll', () => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
-  // Show popup nav when scrolled down past threshold
-  if (scrollTop > scrollThreshold) {
+  const currentY = window.scrollY;
+
+  if (currentY > scrollThreshold) {
+    // Scrolled down: hide header, show popup
+    headerNav.classList.add('header-hidden');
     popupNav.classList.add('visible');
   } else {
+    // At top: show header, hide popup
+    headerNav.classList.remove('header-hidden');
     popupNav.classList.remove('visible');
   }
-  
-  lastScrollTop = scrollTop;
 });
 
 // Smooth scroll for popup nav links

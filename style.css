@@ -44,6 +44,7 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 .container {
@@ -54,6 +55,7 @@ body {
   border-right: 1px solid var(--border-color);
   min-height: 100vh;
   transition: background-color 0.3s ease, border-color 0.3s ease;
+  overflow-x: hidden;
 }
 
 /* Header with back arrow */
@@ -69,12 +71,15 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .logo-section {
   display: flex;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .logo-button {
@@ -368,6 +373,8 @@ body[data-theme="light"] .banner-overlay {
   transform: translate(-50%, -50%);
   margin: 0;
   width: 100%;
+  max-width: 100%;
+  padding: 0 16px;
   text-align: center;
   color: #ffffff;
   font-size: clamp(2rem, 8vw, 4.5rem);
@@ -379,6 +386,7 @@ body[data-theme="light"] .banner-overlay {
   gap: 20px;
   flex-wrap: wrap;
   pointer-events: none;
+  box-sizing: border-box;
 }
 
 .banner-title .word {
@@ -428,6 +436,8 @@ body[data-theme="light"] .banner-title .word {
   align-items: flex-start;
   margin-bottom: 12px;
   margin: 0 1rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Profile Picture */
@@ -533,6 +543,8 @@ body[data-theme="light"] .banner-title .word {
   display: flex;
   gap: 8px;
   margin-top: 12px;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .action-buttons a {
@@ -670,6 +682,8 @@ body[data-theme="dark"] .icon-btn-github .github-light {
 .profile-details {
   margin-top: 4px;
   margin-left: 15px;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .profile-name {
@@ -714,6 +728,9 @@ body[data-theme="dark"] .icon-btn-github .github-light {
   color: var(--text-secondary);
   margin-bottom: 12px;
   transition: color 0.3s ease;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .meta-item {
@@ -722,12 +739,15 @@ body[data-theme="dark"] .icon-btn-github .github-light {
   gap: 5px;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .meta-item i {
   width: 18px;
   height: 18px;
   padding-right: 20px;
+  flex-shrink: 0;
 }
 
 .meta-item .description:hover {
@@ -1418,6 +1438,16 @@ footer {
     border-right: none;
   }
 
+  .header-nav {
+    padding: 20px 12px;
+  }
+
+  .banner-title {
+    letter-spacing: 1px;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
   .profile-banner {
     height: 200px;
   }
@@ -1439,6 +1469,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .header-nav {
+    padding: 16px 10px;
+  }
+
   .logo-button {
     width: 40px;
     height: 40px;
@@ -1451,6 +1485,24 @@ footer {
 
   .header-name {
     font-size: 1.2rem;
+  }
+
+  .banner-title {
+    letter-spacing: 0.5px;
+    gap: 8px;
+    padding: 0 10px;
+  }
+
+  .profile-info {
+    padding: 12px 10px 16px;
+  }
+
+  .profile-actions {
+    margin: 0 0.5rem;
+  }
+
+  .profile-details {
+    margin-left: 10px;
   }
 
   .theme-toggle-btn {
@@ -1549,6 +1601,10 @@ footer {
 }
 
 @media (max-width: 380px) {
+  .header-nav {
+    padding: 14px 8px;
+  }
+
   .logo-button {
     width: 36px;
     height: 36px;
@@ -1561,6 +1617,20 @@ footer {
 
   .header-name {
     font-size: 1.1rem;
+  }
+
+  .banner-title {
+    letter-spacing: 0px;
+    gap: 6px;
+    padding: 0 8px;
+  }
+
+  .profile-info {
+    padding: 12px 8px 16px;
+  }
+
+  .profile-actions {
+    margin: 0 0.25rem;
   }
 
   .theme-toggle-btn {
@@ -1594,7 +1664,14 @@ footer {
 
 @media (max-width: 320px) {
   .header-nav {
-    padding: 20px 12px;
+    padding: 12px 8px;
+  }
+
+  .banner-title {
+    letter-spacing: -0.5px;
+    gap: 4px;
+    padding: 0 8px;
+    font-size: clamp(1.5rem, 6vw, 3rem);
   }
 
   .logo-button {
@@ -1752,18 +1829,25 @@ footer {
 
 /* POPUP NAVIGATION BAR */
 .popup-nav {
-  position: absolute;
+  position: fixed;
+  top: 8px;
   left: 50%;
   transform: translateX(-50%) scale(0.8);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 100;
 }
 
 .popup-nav.visible {
   opacity: 1;
   transform: translateX(-50%) scale(1);
   pointer-events: all;
+}
+
+/* Hide main header when scrolling down */
+.header-nav.header-hidden {
+  transform: translateY(-100%);
 }
 
 .popup-nav-container {
