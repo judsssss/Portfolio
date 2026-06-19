@@ -38,12 +38,18 @@ body[data-theme="light"] {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
     sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   min-height: 100vh;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   overflow-x: hidden;
 }
 
@@ -54,7 +60,9 @@ body {
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
   min-height: 100vh;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
   overflow-x: hidden;
 }
 
@@ -71,7 +79,10 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
   max-width: 100%;
   box-sizing: border-box;
 }
@@ -147,7 +158,9 @@ body[data-theme="dark"] .logo-button .logo-light {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.2s, border-color 0.3s ease;
+  transition:
+    background-color 0.2s,
+    border-color 0.3s ease;
   font-size: 18px;
 }
 
@@ -182,7 +195,8 @@ body[data-theme="dark"] .logo-button .logo-light {
   top: 0;
   left: 0;
   z-index: 1;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse at 15% 25%,
       rgba(88, 101, 242, 0.25) 0%,
       transparent 40%
@@ -203,7 +217,8 @@ body[data-theme="dark"] .logo-button .logo-light {
 
 /* Light Mode - Soft Clouds & Sky Background */
 body[data-theme="light"] .galaxy-background {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       ellipse at 30% 20%,
       rgba(255, 255, 255, 0.8) 0%,
       transparent 40%
@@ -257,11 +272,8 @@ body[data-theme="light"] .galaxy-background {
   top: 0;
   left: 0;
   z-index: 1;
-  background-image: radial-gradient(
-      2px 2px at 20% 30%,
-      rgba(255, 255, 255, 0.9),
-      transparent
-    ),
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.9), transparent),
     radial-gradient(2px 2px at 60% 70%, rgba(255, 255, 255, 0.8), transparent),
     radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.7), transparent),
     radial-gradient(1px 1px at 80% 10%, rgba(200, 220, 255, 0.8), transparent),
@@ -273,17 +285,16 @@ body[data-theme="light"] .galaxy-background {
     radial-gradient(1px 1px at 25% 60%, rgba(220, 200, 255, 0.6), transparent);
   background-size: 200% 200%;
   background-position: 0% 0%;
-  animation: starsMove 30s linear infinite, starsTwinkle 3s ease-in-out infinite;
+  animation:
+    starsMove 30s linear infinite,
+    starsTwinkle 3s ease-in-out infinite;
   opacity: 0.8;
 }
 
 /* Light Mode - Subtle Sparkles */
 body[data-theme="light"] .stars-layer {
-  background-image: radial-gradient(
-      3px 3px at 25% 25%,
-      rgba(255, 255, 255, 0.9),
-      transparent
-    ),
+  background-image:
+    radial-gradient(3px 3px at 25% 25%, rgba(255, 255, 255, 0.9), transparent),
     radial-gradient(2px 2px at 65% 65%, rgba(255, 255, 255, 0.8), transparent),
     radial-gradient(2px 2px at 45% 45%, rgba(255, 255, 255, 0.7), transparent),
     radial-gradient(3px 3px at 85% 15%, rgba(255, 255, 255, 0.85), transparent),
@@ -395,7 +406,9 @@ body[data-theme="light"] .banner-overlay {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.2);
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(255, 255, 255, 0.2);
   animation: gentleFloat 3s ease-in-out infinite;
 }
 
@@ -405,7 +418,8 @@ body[data-theme="light"] .banner-title .word {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.8),
+  text-shadow:
+    0 2px 10px rgba(255, 255, 255, 0.8),
     0 0 40px rgba(255, 255, 255, 0.5);
 }
 
@@ -465,9 +479,13 @@ body[data-theme="light"] .banner-title .word {
   border-radius: 50%;
   border: 4px solid transparent;
   background: conic-gradient(#6c3bb0, #6c3bb0) border-box;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -561,7 +579,9 @@ body[data-theme="light"] .banner-title .word {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s, border-color 0.3s ease;
+  transition:
+    background-color 0.2s,
+    border-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -589,7 +609,9 @@ body[data-theme="light"] .banner-title .word {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 20;
 }
 
@@ -625,7 +647,9 @@ body[data-theme="light"] .banner-title .word {
   border-top-color: var(--text-primary);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 20;
 }
 
@@ -653,6 +677,45 @@ body[data-theme="light"] .banner-title .word {
   height: 34px;
   padding: 0;
   border-radius: 50%;
+}
+
+/* Make SVG and images scale responsively */
+.icon-btn-github img,
+.icon-btn-lnknd img{
+  width: 18px;
+  height: 18px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.icon-btn-email img {
+  width: 26px;
+  height: 26px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+/* Scale icons on smaller screens */
+@media (max-width: 600px) {
+  .icon-btn-github img,
+  .icon-btn-lnknd img {
+    width: 16px;
+    height: 16px;
+  }
+  .icon-btn-email img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 400px) {
+  .icon-btn-github img,
+  .icon-btn-lnknd img{
+    width: 14px;
+    height: 14px;
+  }
+  .icon-btn-email img {
+    width: 22px;
+    height: 22px;
+  }
 }
 
 .icon-btn-github .github-dark {
@@ -1110,7 +1173,9 @@ body[data-theme="dark"] .icon-btn-github .github-light {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 10;
 }
 
@@ -1835,7 +1900,9 @@ footer {
   transform: translateX(-50%) scale(0.8);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   z-index: 100;
 }
 
